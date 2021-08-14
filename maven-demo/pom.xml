@@ -1,0 +1,76 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.codebin</groupId>
+  <artifactId>maven-demo</artifactId>
+  <version>0.0.1</version>
+  
+  <dependencies>
+  	<dependency>
+    	<groupId>com.github.holgerbrandl</groupId>
+    	<artifactId>themoviedbapi</artifactId>
+    	<version>1.12</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>com.sun.mail</groupId>
+		<artifactId>javax.mail</artifactId>
+		<version>1.5.5</version>
+	</dependency>
+	
+	<dependency>
+    	<groupId>org.json</groupId>
+    	<artifactId>json</artifactId>
+    	<version>20180130</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>mysql</groupId>
+	    <artifactId>mysql-connector-java</artifactId>
+	    <version>8.0.25</version>
+	</dependency>
+	
+	<dependency>
+  		<groupId>org.jscience</groupId>
+  		<artifactId>jscience</artifactId>
+  		<version>4.3.1</version>
+	</dependency>
+  </dependencies>
+  
+
+<build>
+<plugins>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+            <release>11</release>
+
+  <processTypes>
+     <web>java $JAVA_OPTS -cp target/classes:target/dependency/* Main</web>
+  </processTypes>
+
+        </configuration>
+    </plugin>
+
+
+	<plugin>
+    	<groupId>org.apache.maven.plugins</groupId>
+    	<artifactId>maven-enforcer-plugin</artifactId>
+    	<version>1.4.1</version>
+	</plugin>
+
+
+      <plugin>
+        <groupId>com.heroku.sdk</groupId>
+        <artifactId>heroku-maven-plugin</artifactId>
+        <version>3.0.3</version>
+        
+        	<configuration>
+  				<appName>cinemates21</appName>
+			</configuration>
+      </plugin>
+      
+    </plugins>
+  </build>
+</project>
